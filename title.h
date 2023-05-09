@@ -1,7 +1,10 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 void title() {
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(h, 10);
     cout << " _____                                     _ \n";
     cout << "|  ___|                                   | |\n";
     cout << "| |____   _____ _ __ _   _ _ __   __ _  __| |\n";
