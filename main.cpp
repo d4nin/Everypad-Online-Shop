@@ -1,15 +1,18 @@
 #include <iostream>
 #include <windows.h>
 #include <iomanip>
+#include <fstream>
 #include "title.h"
 using namespace std;
+
+fstream inf("podaci.txt", ios::in | ios::out | ios::app);
 
 void Registracija() {
 
 }
 
 void Prijava() {
-    
+
 }
 
 int main() {
