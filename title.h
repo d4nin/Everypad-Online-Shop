@@ -10,6 +10,7 @@ void title() {
     cout << "-------------------------\n";
     SetConsoleTextAttribute(h, 12);
     cout << "Dobro dosli u Everypad!\nBroj jedan mjesta za online shopping!\n\n";
+    SetConsoleTextAttribute(h, 11);
     cout << "Pritisnite bilo koje dugme da nastavite!\n";
     SetConsoleTextAttribute(h, 7);
 }
