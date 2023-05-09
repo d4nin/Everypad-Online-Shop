@@ -8,5 +8,7 @@ void title() {
     cout << "-------------------------\n";
     cout << "|    E V E R Y P A D    |\n";
     cout << "-------------------------\n";
+    SetConsoleTextAttribute(h, 12);
+    cout << "Dobro dosli u Everypad!\nBroj jedan mjesta za online shopping!\n";
     SetConsoleTextAttribute(h, 7);
 }
