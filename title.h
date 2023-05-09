@@ -16,5 +16,6 @@ void title() {
     if(getch()) {
         Beep(500, 400);
     }
+    system("CLS");
     SetConsoleTextAttribute(h, 7);
 }
