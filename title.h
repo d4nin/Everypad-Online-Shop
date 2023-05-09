@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <conio.h>
 using namespace std;
 
 void title() {
@@ -12,5 +13,8 @@ void title() {
     cout << "Dobro dosli u Everypad!\nBroj jedan mjesta za online shopping!\n\n";
     SetConsoleTextAttribute(h, 11);
     cout << "Pritisnite bilo koje dugme da nastavite!\n";
+    if(getch()) {
+        Beep(500, 400);
+    }
     SetConsoleTextAttribute(h, 7);
 }
