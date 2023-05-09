@@ -3,10 +3,6 @@
 #include <conio.h>
 using namespace std;
 
-void mainScreen() {
-    
-}
-
 void title() {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(h, 10);
