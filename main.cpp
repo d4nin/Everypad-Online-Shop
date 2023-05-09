@@ -1,7 +1,8 @@
 #include <iostream>
+#include "title.h"
 using namespace std;
 
 int main() {
-    cout << "Selam raja\n";
+    title();
     return 0;
 }
