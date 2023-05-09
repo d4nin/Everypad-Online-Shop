@@ -4,6 +4,14 @@
 #include "title.h"
 using namespace std;
 
+void Registracija() {
+
+}
+
+void Prijava() {
+    
+}
+
 int main() {
     title();
 
