@@ -29,7 +29,6 @@ void Registracija() {
 void Prijava() {
     string korisnicka, lozinka;
 
-    // Reset the file pointers to the beginning of the files
     username.seekg(0, ios::beg);
     password.seekg(0, ios::beg);
 
