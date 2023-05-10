@@ -2,22 +2,37 @@
 #include <windows.h>
 #include <iomanip>
 #include <fstream>
+#include <string>
 #include "title.h"
 using namespace std;
 
-fstream inf("podaci.txt", ios::in | ios::out | ios::app);
+fstream username("username.txt", ios::out);
+fstream password("lozinka.txt", ios::out);
 
 void Registracija() {
+    string korisnicka, lozinka;
+    cout << "Unesite korisnicko ime:\n";
+    cin >> korisnicka;
 
+    if(!username) cout << "Problem sa datotekom!\n";
+    else username << korisnicka;
+    
+    cout << endl;
+
+    cout << "Unesite lozinku:\n\n";
+    cin >> lozinka;
+
+    if(!password) cout << "Problem sa datotekom!\n";
+    else password << lozinka;
 }
 
 void Prijava() {
-
+    
 }
 
 int main() {
     title();
-
+    
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(h, 10);
     cout << setw(25) << "IZABERITE OPCIJU:\n";
@@ -29,7 +44,7 @@ int main() {
     unos:cin >> opcijaZaProfil;
     switch(opcijaZaProfil) {
         case 1:
-            cout << "Lololololol\n";
+            Registracija();
             break;
         case 2:
             cout << "xdxdxdxdxdxd\n";
