@@ -20,7 +20,19 @@ void Registracija() {
     cout << endl;
 
     cout << "Unesite lozinku:\n";
-    cin >> lozinka;
+    unos2:cin >> lozinka;
+
+    int s2(0), s3(0);
+    for(int i = 0; i < lozinka.size(); i++) {
+        char c = lozinka[i];
+        if(isupper(c)) s2++;
+    }
+    s3 = lozinka.size();
+    if(s2 < 2 || s3 <= 7) {
+        cout << "Lozinka mora imati:\n";
+        cout << "Dva velika slova i mora biti duzine od 7 slova. Pokusaj te ponovo:\n";
+        goto unos2;
+    }
 
     if(!password) cout << "Problem sa datotekom!\n";
     else password << lozinka;
