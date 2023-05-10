@@ -32,16 +32,26 @@ void Prijava() {
     username.seekg(0, ios::beg);
     password.seekg(0, ios::beg);
 
-    if (getline(username, korisnicka)) {
-        cout << korisnicka << '\n';
-    } else {
-        cout << "Problem sa citanjem datoteka!\n";
+    getline(username, korisnicka);
+    getline(password, lozinka);
+
+    string korisnickaPrijava, lozinkaPrijava;
+
+    int i(3), j(3);
+    cout << "Unesite korisnicko ime:\n";
+    unos1:cin >> korisnickaPrijava;
+    if(korisnickaPrijava != korisnicka) {
+        cout << "Netacno. Pokusaj te ponovo:\n";
+        goto unos1;
     }
 
-    if (getline(password, lozinka)) {
-        cout << lozinka << '\n';
-    } else {
-        cout << "Problem sa citanjem datoteka!\n";
+    cout << endl;
+
+    cout << "Unesite lozinku:\n";
+    unos2:cin >> lozinkaPrijava;
+    if(lozinkaPrijava != lozinka) {
+        cout << "Netacno. Pokusaj te ponovo:\n";
+        goto unos2;
     }
 }
 
@@ -59,9 +69,11 @@ int main() {
     unos:cin >> opcijaZaProfil;
     switch(opcijaZaProfil) {
         case 1:
+            system("CLS");
             Registracija();
             break;
         case 2:
+            system("CLS");
             Prijava();
             break;
         default:
