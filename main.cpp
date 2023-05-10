@@ -11,8 +11,20 @@ fstream password("lozinka.txt", ios::in | ios::out | ios::app);
 
 void Registracija() {
     string korisnicka, lozinka;
+
     cout << "Unesite korisnicko ime:\n";
-    cin >> korisnicka;
+    cin.ignore();
+    unos1:getline(cin, korisnicka);
+
+    int s1(0);
+    for(int i = 0; i < korisnicka.size(); i++) {
+        char c = korisnicka[i];
+        if(isspace(c)) s1++;
+    }
+    if(s1 > 0) {
+        cout << "Korisnicko ime ne smije imati razmak! Pokusaj te ponovo:\n";
+        goto unos1;
+    }
 
     if(!username) cout << "Problem sa datotekom!\n";
     else username << korisnicka;
