@@ -6,8 +6,8 @@
 #include "title.h"
 using namespace std;
 
-fstream username("username.txt", ios::out);
-fstream password("lozinka.txt", ios::out);
+fstream username("username.txt", ios::in | ios::out | ios::app);
+fstream password("lozinka.txt", ios::in | ios::out | ios::app);
 
 void Registracija() {
     string korisnicka, lozinka;
@@ -16,10 +16,10 @@ void Registracija() {
 
     if(!username) cout << "Problem sa datotekom!\n";
     else username << korisnicka;
-    
+
     cout << endl;
 
-    cout << "Unesite lozinku:\n\n";
+    cout << "Unesite lozinku:\n";
     cin >> lozinka;
 
     if(!password) cout << "Problem sa datotekom!\n";
@@ -27,7 +27,23 @@ void Registracija() {
 }
 
 void Prijava() {
-    
+    string korisnicka, lozinka;
+
+    // Reset the file pointers to the beginning of the files
+    username.seekg(0, ios::beg);
+    password.seekg(0, ios::beg);
+
+    if (getline(username, korisnicka)) {
+        cout << korisnicka << '\n';
+    } else {
+        cout << "Problem sa citanjem datoteka!\n";
+    }
+
+    if (getline(password, lozinka)) {
+        cout << lozinka << '\n';
+    } else {
+        cout << "Problem sa citanjem datoteka!\n";
+    }
 }
 
 int main() {
@@ -47,7 +63,7 @@ int main() {
             Registracija();
             break;
         case 2:
-            cout << "xdxdxdxdxdxd\n";
+            Prijava();
             break;
         default:
             cout << "Morate unijeti brojeve izmedju 1 - 2! Pokusaj te ponovo:\n";
