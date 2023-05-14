@@ -11,5 +11,28 @@ void MainMenu(string korisnicka) {
     cout << setw(25) << "Dobro dosli, ";
     SetConsoleTextAttribute(h, 3);
     cout << korisnicka << '\n';
+    cout << endl << endl;
+
+    SetConsoleTextAttribute(h, 10);
+    int opcija;
+    cout << "1. Kupovina\n";
+    cout << "2. Kako koristiti Everypad\n";
+    cout << "3. O nama\n\n";
+    SetConsoleTextAttribute(h, 7);
+    unos:cin >> opcija;
+    switch(opcija) {
+        case 1:
+            cout << "Lorem ipsum";
+            break;
+        case 2:
+            cout << "dolor sit amet";
+            break;
+        case 3:
+            cout << "consectetur adipiscing elit";
+            break;
+        default: 
+            cout << "Morate unijeti broj izmedju 1 - 3! Pokusaj te ponovo!\n";
+            goto unos;
+    }
     SetConsoleTextAttribute(h, 7);
 }
