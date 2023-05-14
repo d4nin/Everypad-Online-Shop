@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <iomanip>
 using namespace std;
 
 void MainMenu(string korisnicka) {
@@ -7,7 +8,7 @@ void MainMenu(string korisnicka) {
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
     SetConsoleTextAttribute(h, 2);
-    cout << "Dobro dosli, ";
+    cout << setw(25) << "Dobro dosli, ";
     SetConsoleTextAttribute(h, 3);
     cout << korisnicka << '\n';
     SetConsoleTextAttribute(h, 7);
