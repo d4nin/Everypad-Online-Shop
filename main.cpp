@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string>
 #include "title.h"
+#include "MainMenu.h"
 using namespace std;
 
 fstream username("username.txt", ios::in | ios::out | ios::app);
@@ -48,6 +49,8 @@ void Registracija() {
 
     if(!password) cout << "Problem sa datotekom!\n";
     else password << lozinka;
+
+    MainMenu(korisnicka);
 }
 
 void Prijava() {
@@ -77,6 +80,8 @@ void Prijava() {
         cout << "Netacno. Pokusaj te ponovo:\n";
         goto unos2;
     }
+
+    MainMenu(korisnicka);
 }
 
 int main() {
