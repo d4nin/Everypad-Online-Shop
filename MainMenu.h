@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <iomanip>
+#include "Onama.h"
 using namespace std;
 
 void MainMenu(string korisnicka) {
@@ -28,7 +29,7 @@ void MainMenu(string korisnicka) {
             cout << "dolor sit amet";
             break;
         case 3:
-            cout << "consectetur adipiscing elit";
+            ONama();
             break;
         default: 
             cout << "Morate unijeti broj izmedju 1 - 3! Pokusaj te ponovo!\n";
