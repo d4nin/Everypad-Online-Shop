@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <iomanip>
 #include "Onama.h"
+#include "EverypadKakoKoristi.h" 
 using namespace std;
 
 void MainMenu(string korisnicka) {
@@ -26,7 +27,7 @@ void MainMenu(string korisnicka) {
             cout << "Lorem ipsum";
             break;
         case 2:
-            cout << "dolor sit amet";
+            korist();
             break;
         case 3:
             ONama();
