@@ -3,6 +3,7 @@
 #include <iomanip>
 #include "Onama.h"
 #include "EverypadKakoKoristi.h" 
+#include "Kupovina.h"
 using namespace std;
 
 void MainMenu(string korisnicka) {
@@ -24,7 +25,7 @@ void MainMenu(string korisnicka) {
     unos:cin >> opcija;
     switch(opcija) {
         case 1:
-            cout << "Lorem ipsum";
+            Kupovina();
             break;
         case 2:
             korist();
