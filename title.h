@@ -4,6 +4,7 @@
 using namespace std;
 
 void title() {
+    system("CLS");
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(h, 10);
     cout << "-------------------------\n";
