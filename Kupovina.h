@@ -33,36 +33,47 @@ void Sortiranje(kupovina p[], int n) {
     system("CLS");
     int opcija;
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    if(!sortiranje) {
+        cout << "Problem sa otvaranjem datoteke!\n";
+    } 
+    else {
+        SetConsoleTextAttribute(h, 14);
+        cout << "Odaberite nacin sortiranja:\n";
+        SetConsoleTextAttribute(h, 12);
+        cout << "1. Sort prema kategoriji\n";
+        cout << "2. Sort prema modelu\n";
+        cout << "3. Sort prema marki\n";
+        cout << "4. Sort prema cijeni\n\n";
+        SetConsoleTextAttribute(h, 7);
+        unos:cin >> opcija;
 
-    SetConsoleTextAttribute(h, 14);
-    cout << "Odaberite nacin sortiranja:\n";
-    SetConsoleTextAttribute(h, 12);
-    cout << "1. Sort prema kategoriji\n";
-    cout << "2. Sort prema modelu\n";
-    cout << "3. Sort prema marki\n";
-    cout << "4. Sort prema cijeni\n\n";
-    SetConsoleTextAttribute(h, 7);
-    unos:cin >> opcija;
-
-    switch(opcija) {
-        case 1:
-            sort(p, p + n, sortPoKategoriji);
-            sortiranje << "ODABIR SORTIRANJA - Sort prema kategoriji:\n\n";
-            for(int i = 0; i < n; i++) {
-                sortiranje << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << ", " << p[i].cijena << '\n';
-            }
-            cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
-            sortiranje.close();
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        default:
-            cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
-            goto unos;
+        switch(opcija) {
+            case 1:
+                sort(p, p + n, sortPoKategoriji);
+                sortiranje << "ODABIR SORTIRANJA - Sort prema kategoriji:\n\n";
+                for(int i = 0; i < n; i++) {
+                    sortiranje << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << ", " << p[i].cijena << '\n';
+                }
+                cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
+                sortiranje.close();
+                break;
+            case 2:
+                sort(p, p + n, sortPoModelu);
+                sortiranje << "ODABIR SORTIRANJA - Sort prema modelu:\n\n";
+                for(int i = 0; i < n; i++) {
+                    sortiranje << p[i].model << ", " << p[i].kategorija << ", " << p[i].brend << ", " << p[i].cijena << '\n';
+                }
+                cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
+                sortiranje.close();
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
+                goto unos;
+        }
     }
 }
 
