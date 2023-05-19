@@ -46,6 +46,12 @@ void Sortiranje(kupovina p[], int n) {
 
     switch(opcija) {
         case 1:
+            sort(p, p + n, sortPoKategoriji);
+            sortiranje << "ODABIR SORTIRANJA - Sort prema kategoriji:\n\n";
+            for(int i = 0; i < n; i++) {
+                sortiranje << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << ", " << p[i].cijena << '\n';
+            }
+            sortiranje.close();
             break;
         case 2:
             break;
