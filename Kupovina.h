@@ -14,9 +14,17 @@ struct kupovina {
     string brend;
 };
 
-void Sortiranje(kupovina p[], int n);
-void BinarnaPretraga(kupovina p[], int n);
-void Narudzba(kupovina p[], int n);
+void Sortiranje(kupovina p[], int n) {
+    cout << "Yoooo ovo je sortiranjeeeeee\n";
+}
+
+void BinarnaPretraga(kupovina p[], int n) {
+    cout << "Yooo ovo je binarna pretragaaaaa\n";
+}
+
+void Narudzba(kupovina p[], int n) {
+    cout << "Yooooo ovo je narudzbaaaa\n";
+}
 
 void Kupovina() {
     system("CLS");
@@ -68,13 +76,13 @@ void Kupovina() {
 
     switch(opcija) {
         case 1:
-            cout << "Lorem ipsum\n";
+            Sortiranje(p, n);
             break;
         case 2:
-            cout << "Idk lorem ipsum\n";
+            BinarnaPretraga(p, n);
             break;
         case 3:
-            cout << "XD LOL LMFAO LMAO ROFL\n";
+            Narudzba(p, n);
             break;
         default:
             cout << "Morate unijeti broj izmedju 1 - 3! Pokusaj te ponovo:\n";
