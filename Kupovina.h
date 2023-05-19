@@ -5,9 +5,9 @@
 using namespace std;
 
 struct kupovina {
-    string imeArtikla;
+    string model;
     int cijena;
-    string periferija;
+    string kategorija;
     string brend;
 };
 
@@ -15,5 +15,10 @@ void Kupovina() {
     system("CLS");
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(h, 14);
-    cout << "Lorem ipsum\n";
+
+    int n;
+    cout << "Unesite broj proizvoda:\n";
+    cin >> n;
+
+    kupovina p[n];
 }
