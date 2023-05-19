@@ -50,6 +50,9 @@ void Registracija() {
     if(!password) cout << "Problem sa datotekom!\n";
     else password << lozinka;
 
+    username.close();
+    password.close();
+
     MainMenu(korisnicka);
 }
 
@@ -64,7 +67,6 @@ void Prijava() {
 
     string korisnickaPrijava, lozinkaPrijava;
 
-    int i(3), j(3);
     cout << "Unesite korisnicko ime:\n";
     unos1:cin >> korisnickaPrijava;
     if(korisnickaPrijava != korisnicka) {
@@ -81,6 +83,9 @@ void Prijava() {
         goto unos2;
     }
 
+    username.close();
+    password.close();
+    
     MainMenu(korisnicka);
 }
 
