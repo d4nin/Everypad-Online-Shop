@@ -1,12 +1,14 @@
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
+#include <string>
 using namespace std;
 
 struct kupovina {
     string imeArtikla;
     int cijena;
-    string kategorijaArtikla;
+    string periferija;
+    string brend;
 };
 
 void Kupovina() {
