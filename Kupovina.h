@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <string>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 
 ofstream proizvodi("proizvodi.txt");
@@ -14,8 +15,48 @@ struct kupovina {
     string brend;
 };
 
+bool sortPoKategoriji(kupovina a, kupovina b) {
+    return a.kategorija < b.kategorija;
+}
+bool sortPoModelu(kupovina a, kupovina b) {
+    return a.model < b.model;
+}
+bool sortPoMarki(kupovina a, kupovina b) {
+    return a.model < b.model;
+}
+bool sortPoCijeni(kupovina a, kupovina b) {
+    return a.cijena < a.cijena;
+}
+
 void Sortiranje(kupovina p[], int n) {
-    cout << "Yoooo ovo je sortiranjeeeeee\n";
+    ofstream sortiranje("sortiranje.txt");
+    system("CLS");
+    int opcija;
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    SetConsoleTextAttribute(h, 14);
+    cout << "Odaberite nacin sortiranja:\n";
+    SetConsoleTextAttribute(h, 12);
+    cout << "1. Sort prema kategoriji\n";
+    cout << "2. Sort prema modelu\n";
+    cout << "3. Sort prema marki\n";
+    cout << "4. Sort prema cijeni\n\n";
+    SetConsoleTextAttribute(h, 7);
+    unos:cin >> opcija;
+
+    switch(opcija) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
+            goto unos;
+    }
 }
 
 void BinarnaPretraga(kupovina p[], int n) {
