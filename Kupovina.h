@@ -25,7 +25,7 @@ bool sortPoMarki(kupovina a, kupovina b) {
     return a.brend < b.brend;
 }
 bool sortPoCijeni(kupovina a, kupovina b) {
-    return a.cijena < a.cijena;
+    return a.cijena < b.cijena;
 }
 
 void Sortiranje(kupovina p[], int n) {
@@ -76,6 +76,13 @@ void Sortiranje(kupovina p[], int n) {
                 sortiranje.close();
                 break;
             case 4:
+                sort(p, p + n, sortPoCijeni);
+                sortiranje << "ODABIR SORTIRANJA - Sort prema cijeni:\n\n";
+                for(int i = 0; i < n; i++) {
+                    sortiranje << p[i].cijena << ", " << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << '\n';
+                }
+                cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortiranje podaci.\n";
+                sortiranje.close();
                 break;
             default:
                 cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
