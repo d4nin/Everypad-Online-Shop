@@ -52,7 +52,7 @@ void Sortiranje(kupovina p[], int n) {
                 sort(p, p + n, sortPoKategoriji);
                 sortiranje << "ODABIR SORTIRANJA - Sort prema kategoriji:\n\n";
                 for(int i = 0; i < n; i++) {
-                    sortiranje << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << ", " << p[i].cijena << '\n';
+                    sortiranje << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << ", " << p[i].cijena << "KM\n";
                 }
                 cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
                 sortiranje.close();
@@ -61,7 +61,7 @@ void Sortiranje(kupovina p[], int n) {
                 sort(p, p + n, sortPoModelu);
                 sortiranje << "ODABIR SORTIRANJA - Sort prema modelu:\n\n";
                 for(int i = 0; i < n; i++) {
-                    sortiranje << p[i].model << ", " << p[i].kategorija << ", " << p[i].brend << ", " << p[i].cijena << '\n';
+                    sortiranje << p[i].model << ", " << p[i].kategorija << ", " << p[i].brend << ", " << p[i].cijena << "KM\n";
                 }
                 cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
                 sortiranje.close();
@@ -70,7 +70,7 @@ void Sortiranje(kupovina p[], int n) {
                 sort(p, p + n, sortPoMarki);
                 sortiranje << "ODABIR SORTIRANJA - Sort prema marki:\n\n";
                 for(int i = 0; i < n; i++) {
-                    sortiranje << p[i].brend << ", " << p[i].kategorija << ", " << p[i].model << ", " << p[i].cijena << '\n';
+                    sortiranje << p[i].brend << ", " << p[i].kategorija << ", " << p[i].model << ", " << p[i].cijena << "KM\n";
                 }
                 cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
                 sortiranje.close();
@@ -79,7 +79,7 @@ void Sortiranje(kupovina p[], int n) {
                 sort(p, p + n, sortPoCijeni);
                 sortiranje << "ODABIR SORTIRANJA - Sort prema cijeni:\n\n";
                 for(int i = 0; i < n; i++) {
-                    sortiranje << p[i].cijena << ", " << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << '\n';
+                    sortiranje << p[i].cijena << "KM, " << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << '\n';
                 }
                 cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortiranje podaci.\n";
                 sortiranje.close();
@@ -133,7 +133,7 @@ void Kupovina() {
         SetConsoleTextAttribute(h, 9);
         cout << "Unesite cijenu " << i + 1 << ". proizvoda:\n";
         cin >> p[i].cijena;
-        proizvodi << p[i].cijena << '\n';
+        proizvodi << p[i].cijena << "KM\n";
         system("CLS");
     }
 
