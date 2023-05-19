@@ -48,7 +48,34 @@ void Kupovina() {
         SetConsoleTextAttribute(h, 9);
         cout << "Unesite cijenu " << i + 1 << ". proizvoda:\n";
         cin >> p[i].cijena;
-        proizvodi << p[i].cijena << 'KM\n';
+        proizvodi << p[i].cijena << '\n';
         system("CLS");
     }
+
+    int opcija;
+    SetConsoleTextAttribute(h, 14);
+    cout << "Izaberite sta zelite sa proizvodima!\n";
+    SetConsoleTextAttribute(h, 12);
+    cout << "1. Sortiranje\n";
+    cout << "2. Binarna Pretraga\n";
+    cout << "3. Narudzba\n\n";
+    SetConsoleTextAttribute(h, 7);
+    unos:cin >> opcija;
+
+    switch(opcija) {
+        case 1:
+            cout << "Lorem ipsum\n";
+            break;
+        case 2:
+            cout << "Idk lorem ipsum\n";
+            break;
+        case 3:
+            cout << "XD LOL LMFAO LMAO ROFL\n";
+            break;
+        default:
+            cout << "Morate unijeti broj izmedju 1 - 3! Pokusaj te ponovo:\n";
+            goto unos;
+    }
+
+    SetConsoleTextAttribute(h, 7);
 }
