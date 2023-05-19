@@ -14,6 +14,10 @@ struct kupovina {
     string brend;
 };
 
+void Sortiranje(kupovina p[], int n);
+void BinarnaPretraga(kupovina p[], int n);
+void Narudzba(kupovina p[], int n);
+
 void Kupovina() {
     system("CLS");
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
