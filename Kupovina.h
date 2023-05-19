@@ -131,7 +131,7 @@ void Kupovina() {
         proizvodi << p[i].brend << " ";
 
         SetConsoleTextAttribute(h, 9);
-        cout << "Unesite cijenu " << i + 1 << ". proizvoda:\n";
+        cout << "Unesite cijenu " << i + 1 << ". proizvoda (U konvertibilnim markama):\n";
         cin >> p[i].cijena;
         proizvodi << p[i].cijena << "KM\n";
         system("CLS");
