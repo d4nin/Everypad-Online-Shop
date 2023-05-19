@@ -51,6 +51,7 @@ void Sortiranje(kupovina p[], int n) {
             for(int i = 0; i < n; i++) {
                 sortiranje << p[i].kategorija << ", " << p[i].model << ", " << p[i].brend << ", " << p[i].cijena << '\n';
             }
+            cout << "Napravljena je datoteka 'sortiranje.txt', unutra se nalaze sortirani podaci.\n";
             sortiranje.close();
             break;
         case 2:
