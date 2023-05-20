@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 ofstream proizvodi("proizvodi.txt");
@@ -295,14 +296,29 @@ void Narudzba(kupovina p[], int n) {
     else {
         SetConsoleTextAttribute(h, 14);
         int opcija;
-        cout << "Izaberite proizvode koje zelite kupiti:\n";
+        cout << "Izaberite proizvode koje zelite kupiti (0 za kraj):\n";
         SetConsoleTextAttribute(h, 12);
         for(int i = 0; i < n; i++) {
-            cout << i + 1 << ". " << p[i].model << " " << p[i].cijena << "KM";
+            cout << i + 1 << ". " << p[i].model << " " << p[i].cijena << "KM\n";
         }
+        cout << endl;
         SetConsoleTextAttribute(h, 7);
         cin >> opcija;
-        
+        vector<kupovina> Proizvodi;
+        while(opcija != 0) {
+            if(opcija >= 0 && opcija <= n) {
+                Proizvodi.push_back(p[opcija - 1]);
+            }
+            else {
+                cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
+            }
+            cin >> opcija;
+        }   
+        float suma(0);
+        for(int i = 0; i < Proizvodi.size(); i++) {
+            suma += Proizvodi[i].cijena;
+        }
+        cout << suma;
         SetConsoleTextAttribute(h, 7);
     }
 }
