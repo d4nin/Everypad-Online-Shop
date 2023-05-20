@@ -152,6 +152,7 @@ void BinarnaPretraga(kupovina p[], int n) {
                     binarnapretraga << "Kategorija " << kategorija << " nije u nizu!\n";
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+                binarnapretraga.close();
         }
         else if(opcija == 2) {
             for(int i = 0; i < n; i++) {
@@ -192,6 +193,7 @@ void BinarnaPretraga(kupovina p[], int n) {
                     binarnapretraga << "Model " << model << " nije u nizu!\n";
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+                binarnapretraga.close();
         }
         else if(opcija == 3) {
             for(int i = 0; i < n; i++) {
@@ -232,6 +234,7 @@ void BinarnaPretraga(kupovina p[], int n) {
                     binarnapretraga << "Brend" << brend << " nije u nizu!\n";
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+                binarnapretraga.close();
         }
         else if(opcija == 4) {
             for(int i = 0; i < n; i++) {
@@ -271,6 +274,11 @@ void BinarnaPretraga(kupovina p[], int n) {
                     binarnapretraga << "Cijena od " << cijena << "KM nije u nizu!\n";
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+                binarnapretraga.close();
+        }
+        else {
+            cout << "Morate dodati broj izmedju 1 - 4! Pokusaj te ponovo:\n";
+            goto unos;
         }
         SetConsoleTextAttribute(h, 7);
     }
