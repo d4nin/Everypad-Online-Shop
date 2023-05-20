@@ -285,7 +285,16 @@ void BinarnaPretraga(kupovina p[], int n) {
 }
 
 void Narudzba(kupovina p[], int n) {
-    cout << "Yooooo ovo je narudzbaaaa\n";
+    ofstream narudzba("narudzba.txt");
+    system("CLS");
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    if(!narudzba) {
+        cout << "Problem sa otvaranjem datoteke!\n";
+    }
+    else {
+        
+    }
 }
 
 void Kupovina() {
