@@ -293,7 +293,17 @@ void Narudzba(kupovina p[], int n) {
         cout << "Problem sa otvaranjem datoteke!\n";
     }
     else {
+        SetConsoleTextAttribute(h, 14);
+        int opcija;
+        cout << "Izaberite proizvode koje zelite kupiti:\n";
+        SetConsoleTextAttribute(h, 12);
+        for(int i = 0; i < n; i++) {
+            cout << i + 1 << ". " << p[i].model << " " << p[i].cijena << "KM";
+        }
+        SetConsoleTextAttribute(h, 7);
+        cin >> opcija;
         
+        SetConsoleTextAttribute(h, 7);
     }
 }
 
