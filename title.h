@@ -11,7 +11,7 @@ void title() {
     cout << "|    E V E R Y P A D    |\n";
     cout << "-------------------------\n";
     SetConsoleTextAttribute(h, 12);
-    cout << "Dobro dosli u Everypad!\nBroj jedan mjesta za online shopping!\n\n";
+    cout << "Dobro dosli u Everypad!\nBroj jedan mjesto za online shopping!\n\n";
     SetConsoleTextAttribute(h, 11);
     cout << "Pritisnite bilo koje dugme da nastavite!\n";
     if(getch()) {
