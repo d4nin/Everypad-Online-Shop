@@ -146,10 +146,10 @@ void BinarnaPretraga(kupovina p[], int n) {
                 }
                 binarnapretraga << "ODABIR BINARNE PRETRAGE: po kategoriji:\n\n";
                 if(pronadjen) {
-                    binarnapretraga << kategorija << " se nalazi na " << poz + 1 << ". poziciji.\n";
+                    binarnapretraga << "Kategorija " << kategorija << " se nalazi na " << poz + 1 << ". poziciji.\n";
                 }
                 else {
-                    binarnapretraga << kategorija << " nije u nizu!\n";
+                    binarnapretraga << "Kategorija " << kategorija << " nije u nizu!\n";
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
         }
@@ -186,10 +186,50 @@ void BinarnaPretraga(kupovina p[], int n) {
                 }
                 binarnapretraga << "ODABIR BINARNE PRETRAGE: po modelu:\n\n";
                 if(pronadjen) {
-                    binarnapretraga << model << " se nalazi na " << poz + 1 << ". poziciji.\n";
+                    binarnapretraga << "Model " << model << " se nalazi na " << poz + 1 << ". poziciji.\n";
                 }
                 else {
-                    binarnapretraga << model << " nije u nizu!\n";
+                    binarnapretraga << "Model " << model << " nije u nizu!\n";
+                }
+                cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+        }
+        else if(opcija == 3) {
+            for(int i = 0; i < n; i++) {
+                    for(int j = 0; j < n - 1 - i; j++) {
+                        if(p[j].brend > p[j + 1].brend) {
+                            string temp = p[j + 1].brend;
+                            p[j + 1].brend = p[j].brend;
+                            p[j].brend = temp;
+                        }
+                    }
+                }
+                cout << "Unesite brend za pretragu:\n";
+                cin.ignore();
+                getline(cin, brend);
+
+                int poz(0);
+                bool pronadjen(false);
+                int l(0), d = n - 1;
+                while(l <= d) {
+                    int s = (l + d) / 2;
+                    if(p[s].brend == brend) {
+                        poz = s;
+                        pronadjen = true;
+                        break;
+                    }
+                    else if(p[s].brend < brend) {
+                        l = s + 1;
+                    }
+                    else {
+                        d = s - 1;
+                    }
+                }
+                binarnapretraga << "ODABIR BINARNE PRETRAGE: po brendu:\n\n";
+                if(pronadjen) {
+                    binarnapretraga << "Brend" << brend << " se nalazi na " << poz + 1 << ". poziciji.\n";
+                }
+                else {
+                    binarnapretraga << "Brend" << brend << " nije u nizu!\n";
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
         }
