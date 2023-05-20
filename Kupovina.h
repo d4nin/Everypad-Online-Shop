@@ -113,7 +113,7 @@ void BinarnaPretraga(kupovina p[], int n) {
 
         string kategorija, model, brend;
         int cijena;
-        if(opcija == 1) {
+        if(opcija == 1) { //Switch case ne radi za binarnu pretragu, nemogu se praviti varijable unutar njih.
             for(int i = 0; i < n; i++) {
                     for(int j = 0; j < n - 1 - i; j++) {
                         if(p[j].kategorija > p[j + 1].kategorija) {
@@ -153,7 +153,46 @@ void BinarnaPretraga(kupovina p[], int n) {
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
         }
-        
+        else if(opcija == 2) {
+            for(int i = 0; i < n; i++) {
+                    for(int j = 0; j < n - 1 - i; j++) {
+                        if(p[j].model > p[j + 1].model) {
+                            string temp = p[j + 1].model;
+                            p[j + 1].model = p[j].model;
+                            p[j].model = temp;
+                        }
+                    }
+                }
+                cout << "Unesite model za pretragu:\n";
+                cin.ignore();
+                getline(cin, model);
+
+                int poz(0);
+                bool pronadjen(false);
+                int l(0), d = n - 1;
+                while(l <= d) {
+                    int s = (l + d) / 2;
+                    if(p[s].model == model) {
+                        poz = s;
+                        pronadjen = true;
+                        break;
+                    }
+                    else if(p[s].model < model) {
+                        l = s + 1;
+                    }
+                    else {
+                        d = s - 1;
+                    }
+                }
+                binarnapretraga << "ODABIR BINARNE PRETRAGE: po modelu:\n\n";
+                if(pronadjen) {
+                    binarnapretraga << model << " se nalazi na " << poz + 1 << ". poziciji.\n";
+                }
+                else {
+                    binarnapretraga << model << " nije u nizu!\n";
+                }
+                cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+        }
         SetConsoleTextAttribute(h, 7);
     }
 }
