@@ -92,7 +92,18 @@ void Sortiranje(kupovina p[], int n) {
 }
 
 void BinarnaPretraga(kupovina p[], int n) {
-    cout << "Yooo ovo je binarna pretragaaaaa\n";
+    ofstream binarnapretraga("binarna_pretraga.txt");
+    system("CLS");
+    int opcija;
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    if(!binarnapretraga) {
+        cout << "Problem sa otvaranjem datoteke!\n";
+    }
+    else {
+        SetConsoleTextAttribute(h, 14);
+        
+        SetConsoleTextAttribute(h, 7);
+    }
 }
 
 void Narudzba(kupovina p[], int n) {
