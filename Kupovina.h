@@ -233,6 +233,45 @@ void BinarnaPretraga(kupovina p[], int n) {
                 }
                 cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
         }
+        else if(opcija == 4) {
+            for(int i = 0; i < n; i++) {
+                    for(int j = 0; j < n - 1 - i; j++) {
+                        if(p[j].cijena > p[j + 1].cijena) {
+                            int temp = p[j + 1].cijena;
+                            p[j + 1].cijena = p[j].cijena;
+                            p[j].cijena = temp;
+                        }
+                    }
+                }
+                cout << "Unesite cijenu za pretragu:\n";
+                cin >> cijena;
+
+                int poz(0);
+                bool pronadjen(false);
+                int l(0), d = n - 1;
+                while(l <= d) {
+                    int s = (l + d) / 2;
+                    if(p[s].cijena == cijena) {
+                        poz = s;
+                        pronadjen = true;
+                        break;
+                    }
+                    else if(p[s].cijena < cijena) {
+                        l = s + 1;
+                    }
+                    else {
+                        d = s - 1;
+                    }
+                }
+                binarnapretraga << "ODABIR BINARNE PRETRAGE: po cijeni:\n\n";
+                if(pronadjen) {
+                    binarnapretraga << "Cijena od " << cijena << "KM se nalazi na " << poz + 1 << ". poziciji.\n";
+                }
+                else {
+                    binarnapretraga << "Cijena od " << cijena << "KM nije u nizu!\n";
+                }
+                cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
+        }
         SetConsoleTextAttribute(h, 7);
     }
 }
