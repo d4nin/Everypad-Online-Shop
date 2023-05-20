@@ -13,7 +13,7 @@ void korist() {
 
     SetConsoleTextAttribute(h, 14);
     cout << "Everypad je veoma lahko koristiti. Jednostavno kliknete na opciju 'kupovina' i mozete kupiti razne proizvode.\n";
-    cout << "Nakon odabira artikala, ponudena vam je opcija za zavrsetak transakcije, sortiranje artikala i ...\n";
+    cout << "Nakon odabira artikala, ponudena vam je opcija za zavrsetak transakcije, sortiranje artikala i pretrazivaje podataka proizvoda.\n";
     cout << "Tokom zavrsetka transakcije morate unijeti vase puno ime, adresu stanovanja, drzavnu i grad stanovanja, postanski broj i vas broj telefona.\n\n";
     
     SetConsoleTextAttribute(h, 12);
