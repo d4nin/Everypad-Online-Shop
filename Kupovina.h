@@ -111,18 +111,47 @@ void BinarnaPretraga(kupovina p[], int n) {
         SetConsoleTextAttribute(h, 7);
         unos:cin >> opcija;
 
-        switch(opcija) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            default:
-                cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
-                goto unos;
+        string kategorija, model, brend;
+        int cijena;
+        if(opcija == 1) {
+            for(int i = 0; i < n; i++) {
+                    for(int j = 0; j < n - 1 - i; j++) {
+                        if(p[j].kategorija > p[j + 1].kategorija) {
+                            string temp = p[j + 1].kategorija;
+                            p[j + 1].kategorija = p[j].kategorija;
+                            p[j].kategorija = temp;
+                        }
+                    }
+                }
+                cout << "Unesite kategoriju za pretragu:\n";
+                cin.ignore();
+                getline(cin, kategorija);
+
+                int poz(0);
+                bool pronadjen(false);
+                int l(0), d = n - 1;
+                while(l <= d) {
+                    int s = (l + d) / 2;
+                    if(p[s].kategorija == kategorija) {
+                        poz = s;
+                        pronadjen = true;
+                        break;
+                    }
+                    else if(p[s].kategorija < kategorija) {
+                        l = s + 1;
+                    }
+                    else {
+                        d = s - 1;
+                    }
+                }
+                binarnapretraga << "ODABIR BINARNE PRETRAGE: po kategoriji:\n\n";
+                if(pronadjen) {
+                    binarnapretraga << kategorija << " se nalazi na " << poz + 1 << ". poziciji.\n";
+                }
+                else {
+                    binarnapretraga << kategorija << " nije u nizu!\n";
+                }
+                cout << "Napravljena je datoteka 'binarna_pretraga.txt', unutra se nalazi rezultat binarne pretrage.\n";
         }
         
         SetConsoleTextAttribute(h, 7);
