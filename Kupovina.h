@@ -316,50 +316,73 @@ void Narudzba(kupovina p[], int n) {
             cin >> opcija;
         }   
         float suma(0);
+        narudzba << "MODELI ZA NARUDZBU:\n";
         for(int i = 0; i < Proizvodi.size(); i++) {
             suma += Proizvodi[i].cijena;
+            narudzba << Proizvodi[i].model << ", " << Proizvodi[i].cijena << "KM\n";
         }
+        narudzba << "UKUPNA CIJENA: " << suma << "KM\n\n";
+
         SetConsoleTextAttribute(h, 10);
-        cout << setw(25) << "UKUPNA CIJENA: " << suma << '\n\n';
+        cout << setw(25) << "UKUPNA CIJENA: " << suma << "KM\n\n";
         int brojKartice, datumIstekaMjesec, datumIstekaGodina, CVV, zipCode, brojTelefona;
         string imeprezime, grad, adresa, drzava;
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE BROJ KREDITNE KARTICE:\n";
         SetConsoleTextAttribute(h, 7);
         cin >> brojKartice;
+        narudzba << "Broj kartice: " << brojKartice << '\n';
+
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE DATUM ISTEKA KARTICE:\n";
         SetConsoleTextAttribute(h, 7);
         cin >> datumIstekaMjesec >> datumIstekaGodina;
         SetConsoleTextAttribute(h, 12);
+        narudzba << "Datum isteka: " << datumIstekaMjesec << " " << datumIstekaGodina << '\n';
+
         cout << "UNESITE BROJ CVV KARTICE:\n";
         SetConsoleTextAttribute(h, 7);
         cin >> CVV;
+        narudzba << "Broj CVV: " << CVV << '\n';
+        
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE IME I PREZIME:\n";
         SetConsoleTextAttribute(h, 7);
         cin.ignore();
         getline(cin, imeprezime);
+        narudzba << "Ime i prezime: " << imeprezime << '\n';
+        
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE GRAD STANOVANJA:\n";
         SetConsoleTextAttribute(h, 7);
         getline(cin, grad);
+        narudzba << "Grad: " << grad << '\n';
+        
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE ADRESU STANOVANJA:\n";
         SetConsoleTextAttribute(h, 7);
         getline(cin, adresa);
+        narudzba << "Adresa: " << adresa << '\n';
+        
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE POSTAL KOD:\n";
         SetConsoleTextAttribute(h, 7);
         cin >> zipCode;
+        narudzba << "Postal kod: " << zipCode << '\n';
+        
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE DRZAVU:\n";
         SetConsoleTextAttribute(h, 7);
+        cin.ignore();
         getline(cin, drzava);
+        narudzba << "Drzava: " << drzava << '\n';
+        
         SetConsoleTextAttribute(h, 12);
         cout << "UNESITE BROJ TELEFONA:\n";
         SetConsoleTextAttribute(h, 7);
         cin >> brojTelefona;
+        narudzba << "Broj telefona: " << brojTelefona << '\n';
+        
         system("CLS");
         cout << "Hvala vam na narudzbi. Vasa narudzba ce doci za sedmice.\n";
     }
