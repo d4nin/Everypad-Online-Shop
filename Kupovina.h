@@ -5,6 +5,7 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 ofstream proizvodi("proizvodi.txt");
@@ -318,7 +319,12 @@ void Narudzba(kupovina p[], int n) {
         for(int i = 0; i < Proizvodi.size(); i++) {
             suma += Proizvodi[i].cijena;
         }
-        cout << suma;
+        SetConsoleTextAttribute(h, 10);
+        cout << setw(25) << "UKUPNA CIJENA: " << suma << '\n\n';
+        int brojKartice, datumIstekaMjesec, datumIstekaGodina, zipCode, brojTelefona;
+        string ime, prezime, grad, adresa, drzava;
+        SetConsoleTextAttribute(h, 12);
+        
         SetConsoleTextAttribute(h, 7);
     }
 }
