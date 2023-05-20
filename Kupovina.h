@@ -42,7 +42,7 @@ void Sortiranje(kupovina p[], int n) {
         SetConsoleTextAttribute(h, 12);
         cout << "1. Sort prema kategoriji\n";
         cout << "2. Sort prema modelu\n";
-        cout << "3. Sort prema marki\n";
+        cout << "3. Sort prema brendu\n";
         cout << "4. Sort prema cijeni\n\n";
         SetConsoleTextAttribute(h, 7);
         unos:cin >> opcija;
@@ -101,6 +101,29 @@ void BinarnaPretraga(kupovina p[], int n) {
     }
     else {
         SetConsoleTextAttribute(h, 14);
+        int opcija;
+        cout << "Unesite koju binarnu pretragu zelite da koristite:\n";
+        SetConsoleTextAttribute(h, 12);
+        cout << "1. Binarna pretraga kategorija\n";
+        cout << "2. Binarna pretraga modela\n";
+        cout << "3. Binarna pretraga brendova\n";
+        cout << "4. Binarna pretraga cijena\n\n";
+        SetConsoleTextAttribute(h, 7);
+        unos:cin >> opcija;
+
+        switch(opcija) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                cout << "Morate unijeti broj izmedju 1 - 4! Pokusaj te ponovo:\n";
+                goto unos;
+        }
         
         SetConsoleTextAttribute(h, 7);
     }
