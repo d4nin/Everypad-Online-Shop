@@ -6,6 +6,9 @@
 #include <algorithm>
 #include <vector>
 #include <iomanip>
+#include <ctime>
+#include <cstdlib>
+
 using namespace std;
 
 ofstream proizvodi("proizvodi.txt");
@@ -290,6 +293,8 @@ void Narudzba(kupovina p[], int n) {
     ofstream narudzba("narudzba.txt");
     system("CLS");
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    srand(time(NULL));
+    int broj = rand() % 5 + 1;
 
     if(!narudzba) {
         cout << "Problem sa otvaranjem datoteke!\n";
@@ -384,7 +389,7 @@ void Narudzba(kupovina p[], int n) {
         narudzba << "Broj telefona: " << brojTelefona << '\n';
         
         system("CLS");
-        cout << "Hvala vam na narudzbi. Vasa narudzba ce doci za sedmice.\n";
+        cout << "Hvala vam na narudzbi. Vasa narudzba ce doci za " << broj << " sedmice.\n";
     }
 }
 
